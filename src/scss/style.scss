@@ -1,6 +1,6 @@
 @import 'reset';
 
-$blue: #253B77;
+$deepOcean: #253B77;
 $red: #752730;
 $green: lighten(#254D32, 10%);
 $parchment: #FFFFFA;
@@ -19,7 +19,7 @@ main {
 
 a {
   text-decoration: none;
-  color: $blue;
+  color: $deepOcean;
   &:hover {
     text-decoration: none;
     color: $red;
@@ -32,6 +32,18 @@ img {
 
 form {
   background-color: $earthGreen;
+  color: $deepOcean;
+  button {
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 1px #fff;
+    background: #fff;
+    &:hover {
+      border: solid 1px $deepOcean;
+      background-color: $deepOcean;
+      color: white;
+    }
+  }
 }
 
 nav {
@@ -64,18 +76,6 @@ nav {
   }
 }
 
-button {
-  color: $red;
-  border-radius: 50%;
-  padding: 10px;
-  border: solid 1px $blue;
-  background: none;
-  &:hover {
-    border: solid 1px $red;
-    background-color: $blue;
-    color: white;
-  }
-}
 
 h1 {
   margin-top: 0px;
@@ -303,7 +303,7 @@ main {
 }
 
 .ng-message-error {
-  color: red;
+  color: $red;
   padding: 5px;
   text-align: center;
   margin: 5px 0;
