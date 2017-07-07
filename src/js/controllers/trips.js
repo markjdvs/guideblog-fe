@@ -57,7 +57,6 @@ function TripsIndexCtrl(Trip, Post, Stop) {
           .$promise
           .then((stop) => {
             vm.stop = stop;
-            console.log('VM STOP', vm.stop);
             contentString = `
                             <h3>${vm.stop[0].place}</h3>
                             <ul>
@@ -99,7 +98,6 @@ function TripsIndexCtrl(Trip, Post, Stop) {
     google.maps.event.addListener(vm.map, 'zoom_changed', function() {
       vm.zoomLevel = vm.map.getZoom();
       if (vm.zoomLevel < 4) {
-        console.log('zoomed out');
         vm.numberOfClicks = 0;
       }
     });

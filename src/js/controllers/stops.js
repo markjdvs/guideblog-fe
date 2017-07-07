@@ -25,10 +25,8 @@ function StopsShowCtrl(Stop, Post, $state, $stateParams) {
   vm.addPost = addPost;
 
   function forReal() {
-    console.log('for REAL?');
     return true;
   }
-  console.log(forReal());
 
   function deletePost(post) {
     Post
@@ -42,7 +40,6 @@ function StopsShowCtrl(Stop, Post, $state, $stateParams) {
   vm.deletePost = deletePost;
 
   function upVote(post) {
-    console.log('upvoting this', post);
     Post
       .upVote({ id: post.id })
       .$promise
@@ -53,7 +50,6 @@ function StopsShowCtrl(Stop, Post, $state, $stateParams) {
   vm.upVote = upVote;
 
   function downVote(post) {
-    console.log('downvoting this', post);
     Post
       .downVote({ id: post.id })
       .$promise
