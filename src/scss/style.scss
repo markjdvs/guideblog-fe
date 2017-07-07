@@ -3,12 +3,15 @@
 $blue: #253B77;
 $red: #752730;
 $green: lighten(#254D32, 10%);
+$parchment: #FFFFFA;
+$earthBlue: lighten(#2ba5f7, 30%);
+$earthGreen: lighten(#98d04f, 20%);
 
 
 body {
   letter-spacing: 1px;
   font-family: 'BioRhyme', serif;
-  background: #FFFFFA;
+  background: $parchment;
 }
 main {
   height: 100vh;
@@ -27,11 +30,15 @@ img {
   height: 100%;
 }
 
+form {
+  background-color: $earthGreen;
+}
+
 nav {
   font-family: 'BioRhyme', serif;
   margin: 0;
   margin-bottom: 0px;
-  background-color: white !important;
+  background-color: $parchment !important;
   div.navbar-header {
     transform-style: preserve-3d;
     .earthIcon {
