@@ -3,9 +3,10 @@
 $deepOcean: #253B77;
 $red: #752730;
 $green: lighten(#254D32, 10%);
-$parchment: #FFFFFA;
+$parchment: #FFFFF0;
 $earthBlue: lighten(#2ba5f7, 30%);
 $earthGreen: lighten(#98d04f, 20%);
+$blueGrey: #EDEFF2;
 
 
 body {
@@ -72,13 +73,18 @@ nav {
       a {
         color: $red !important;
         &.active {
-          text-decoration: line-through;
+          text-decoration: underline !important;
         }
       }
     }
   }
   &.navbar.navbar-default {
     margin-bottom: 0px;
+  }
+
+  button.navbar-toggle {
+    background: #C6B38E !important;
+    border-radius: 100%;
   }
 }
 
