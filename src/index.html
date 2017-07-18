@@ -19,6 +19,9 @@
 
     <nav class="navbar navbar-default" role="navigation">
   		<div class="navbar-header">
+        <button class="navbar-toggle">
+          Guidebl<img src="../images/earthIcon.png">g
+        </button>
   			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
   				<span class="sr-only">Toggle navigation</span>
           <img ng-class="{'spin': !isNavCollapsed}" class="earthIcon" src="../images/earthIcon.png">
@@ -26,7 +29,7 @@
   		</div>
   		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
   			<ul class="nav navbar-nav">
-          <li ><a ui-sref="tripsIndex" ui-sref-active="active">WorldBlog</a></li>
+          <li ><a ui-sref="tripsIndex" ui-sref-active="active">Guideblog</a></li>
           <li ng-if="main.isAuthenticated()"><a ui-sref="tripsNew" ui-sref-active="active">Add a Trip</a></li>
           <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
           <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>

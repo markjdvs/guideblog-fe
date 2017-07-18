@@ -2,17 +2,18 @@
 
 $deepOcean: #253B77;
 $red: #752730;
-$green: lighten(#254D32, 10%);
-$parchment: #FFFFF0;
+// $earthGreen: lighten(#254D32, 10%);
+$ivory: #FFFFFA;
 $earthBlue: lighten(#2ba5f7, 30%);
 $earthGreen: lighten(#98d04f, 20%);
 $blueGrey: #EDEFF2;
+$earth: #C6B38E;
 
 
 body {
   letter-spacing: 1px;
   font-family: 'BioRhyme', serif;
-  background: $parchment;
+  background: $ivory;
 }
 main {
   height: 100vh;
@@ -57,7 +58,7 @@ nav {
   font-family: 'BioRhyme', serif;
   margin: 0;
   margin-bottom: 0px;
-  background-color: $parchment !important;
+  background-color: #fffff0 !important;
   div.navbar-header {
     transform-style: preserve-3d;
     .earthIcon {
@@ -71,9 +72,10 @@ nav {
   ul {
     li {
       a {
-        color: $red !important;
+        color: darken($earth, 40%) !important;
+
         &.active {
-          text-decoration: underline !important;
+          font-weight: 800 !important;
         }
       }
     }
@@ -82,9 +84,29 @@ nav {
     margin-bottom: 0px;
   }
 
-  button.navbar-toggle {
-    background: #C6B38E !important;
-    border-radius: 100%;
+  button {
+    &.navbar-toggle {
+      &:nth-of-type(1) {
+        color: darken($earth, 40%) !important;
+        font-size: 20px;
+        float: left;
+        margin: 10px;
+        border: none;
+        img {
+          height: 15px;
+          width: 15px;
+          vertical-align: bottom;
+        }
+        &:hover, &:focus {
+          background: none;
+          cursor: default;
+        }
+      }
+      &:nth-of-type(2) {
+        background: $ivory !important;
+        border-radius: 100%;
+      }
+    }
   }
 }
 
@@ -192,7 +214,7 @@ main {
     .profileHeader {
       margin-bottom: 20px;
       h3 {
-        color: $green;
+        color: $earthGreen;
         font-size: 25px;
         display: inline-block;
       }
@@ -228,67 +250,67 @@ main {
 
 @keyframes spin {
   0% {
-    transform: rotateY(0deg);
+    transform: rotate(0deg);
   }
   5% {
-    transform: rotateY(18deg);
+    transform: rotate(18deg);
   }
   10% {
-    transform: rotateY(36deg);
+    transform: rotate(36deg);
   }
   15% {
-    transform: rotateY(54deg);
+    transform: rotate(54deg);
   }
   20% {
-    transform: rotateY(72deg);
+    transform: rotate(72deg);
   }
   25% {
-    transform: rotateY(90deg);
+    transform: rotate(90deg);
   }
   30% {
-    transform: rotateY(108deg);
+    transform: rotate(108deg);
   }
   35% {
-    transform: rotateY(126deg);
+    transform: rotate(126deg);
   }
   40% {
-    transform: rotateY(144deg);
+    transform: rotate(144deg);
   }
   45% {
-    transform: rotateY(162deg);
+    transform: rotate(162deg);
   }
   50% {
-    transform: rotateY(180deg);
+    transform: rotate(180deg);
   }
   55% {
-    transform: rotateY(198deg);
+    transform: rotate(198deg);
   }
   60% {
-    transform: rotateY(216deg);
+    transform: rotate(216deg);
   }
   65% {
-    transform: rotateY(234deg);
+    transform: rotate(234deg);
   }
   70% {
-    transform: rotateY(252deg);
+    transform: rotate(252deg);
   }
   75% {
-    transform: rotateY(270deg);
+    transform: rotate(270deg);
   }
   80% {
-    transform: rotateY(288deg);
+    transform: rotate(288deg);
   }
   85% {
-    transform: rotateY(306deg);
+    transform: rotate(306deg);
   }
   90% {
-    transform: rotateY(324deg);
+    transform: rotate(324deg);
   }
   95% {
-    transform: rotateY(342deg);
+    transform: rotate(342deg);
   }
   100% {
-    transform: rotateY(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -304,7 +326,7 @@ main {
   }
 
   h3 {
-    color: $green;
+    color: $earthGreen;
     font-size: 24px;
     margin-bottom: 10px;
   }
@@ -325,7 +347,7 @@ main {
   margin-top: 10px;
   margin-left: 20px;
   h3 {
-    color: $green;
+    color: $earthGreen;
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -335,7 +357,7 @@ main {
 .addStopForm {
   min-height: 100%;
   h3 {
-    color: $green;
+    color: $earthGreen;
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -352,7 +374,7 @@ main {
   margin: 30px auto;
   padding: 10px;
   h3 {
-    color: $green;
+    color: $earthGreen;
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -368,7 +390,7 @@ main {
   border-top: none;
   margin: 0 auto;
   h3 {
-    color: $green;
+    color: $earthGreen;
     text-align: center;
     font-size: 24px;
     margin-bottom: 10px;
@@ -438,7 +460,7 @@ main {
   margin-top: 10px;
   margin-bottom: 20px;
   h3 {
-    color: $green;
+    color: $earthGreen;
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -468,8 +490,11 @@ main {
 
 .tripsIndexPosts {
   margin-top: 30px;
+  background: lighten($earthGreen, 15%);
+  padding: 20px;
+  border-radius: 10px;
   h3 {
-    color: $green;
+    color: $earthGreen;
     margin-bottom: 10px;
     font-weight: bold;
   }
