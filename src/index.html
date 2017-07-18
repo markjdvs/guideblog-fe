@@ -7,6 +7,7 @@
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqunPN56wSjv3kna8IT0805pIX3f4fB3c&libraries=places"></script>
     <link href="https://fonts.googleapis.com/css?family=BioRhyme:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
     <link rel="shortcut icon" href="/images/earthIcon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Guide Blog</title>
@@ -29,12 +30,12 @@
   		</div>
   		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
   			<ul class="nav navbar-nav">
-          <li ><a ui-sref="tripsIndex" ui-sref-active="active">Guideblog</a></li>
-          <li ng-if="main.isAuthenticated()"><a ui-sref="tripsNew" ui-sref-active="active">Add a Trip</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-          <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUser.id })" ui-sref-active="active">Profile</a></li>
-          <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
+          <li ><a ui-sref="tripsIndex" ui-sref-active="active">worldblog</a></li>
+          <li ng-if="main.isAuthenticated()"><a ui-sref="tripsNew" ui-sref-active="active">add a trip</a></li>
+          <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">login</a></li>
+          <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">register</a></li>
+          <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUser.id })" ui-sref-active="active">profile</a></li>
+          <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">logout</a></li>
   			</ul>
   		</div>
   	</nav>

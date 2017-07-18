@@ -11,10 +11,12 @@
         </a>
       </h3>
       <p class="postShowBody">{{ post.body }}</p>
-      <p>
+      <p class="postShowFooter">
         <a ui-sref="usersShow({ id: post.user.id })">
+          <img ng-src="{{ post.user.image_src }}">
           <strong>{{ post.user.username }}</strong>
         </a>
-        <em>{{ post.created_at | date }}</em></p>
+        <em>{{ post.created_at | date }}</em>
+      </p>
   </div>
 </div>

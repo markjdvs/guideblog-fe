@@ -1,7 +1,7 @@
 @import 'reset';
 
-$deepOcean: #253B77;
-$red: #752730;
+// $earthBlue: #253B77;
+// $red: #752730;
 // $earthGreen: lighten(#254D32, 10%);
 $ivory: #FFFFFA;
 $earthBlue: lighten(#2ba5f7, 30%);
@@ -14,6 +14,7 @@ body {
   letter-spacing: 1px;
   font-family: 'BioRhyme', serif;
   background: $ivory;
+  color: darken($earth, 40%) !important;
 }
 main {
   height: 100vh;
@@ -21,10 +22,9 @@ main {
 
 a {
   text-decoration: none;
-  color: $deepOcean;
+  color: darken($earthBlue, 50%);
   &:hover {
     text-decoration: none;
-    color: $red;
   }
 }
 
@@ -34,7 +34,7 @@ img {
 
 form {
   background-color: $earthGreen;
-  color: $deepOcean;
+  color: $earthBlue;
   h3 {
     padding-bottom: 20px;
   }
@@ -47,8 +47,8 @@ form {
       border: none;
     }
     &:hover {
-      border: solid 1px $deepOcean;
-      background-color: $deepOcean;
+      border: solid 1px $earthBlue;
+      background-color: $earthBlue;
       color: white;
     }
   }
@@ -169,7 +169,6 @@ li {
 }
 
 .tripsIndex {
-
   .mapWrapper {
     width: 100%;
     border-radius: 50%;
@@ -337,7 +336,7 @@ main {
 }
 
 .ng-message-error {
-  color: $red;
+  // color: $red;
   padding: 5px;
   text-align: center;
   margin: 5px 0;
@@ -449,28 +448,6 @@ main {
     margin-bottom: 10px;
   }
 }
-.postShowBody{
-   max-width: 75%;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
-}
-
-.postContent {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  h3 {
-    color: $earthGreen;
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  p {
-    padding: 10px 0;
-    width: 90%;
-    margin: 0 auto;
-  }
-}
 
 .comments {
   min-height: 200px;
@@ -489,21 +466,59 @@ main {
 }
 
 .tripsIndexPosts {
-  margin-top: 30px;
+  margin: 30px 10px;
   background: lighten($earthGreen, 15%);
   padding: 20px;
   border-radius: 10px;
-  h3 {
-    color: $earthGreen;
-    margin-bottom: 10px;
-    font-weight: bold;
+  border: solid 1px lighten(black, 80%);
+  .postShowBody {
+    font-size: 80%;
+    max-width: 95%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0;
   }
-  span {
-    color: $red;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    margin-right: 30px;
+  > h3 {
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 700;
+    span {
+      color: darken($earth, 40%) !important;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      margin-right: 1em;
+    }
+
   }
+
+  .postShowFooter {
+    font-size: 70%;
+    overflow: auto;
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    // font-weight: 700;
+    :nth-child(1) {
+      float: left;
+      line-height: 2em;
+      img {
+        height: 2em;
+        width: 2em;
+        border-radius: 100px;
+        margin-right: 10px;
+      }
+    }
+    :nth-child(2) {
+      float: right;
+      line-height: 2em;
+    }
+  }
+
 }
 
 
