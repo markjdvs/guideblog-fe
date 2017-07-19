@@ -156,6 +156,9 @@ function TripsNewCtrl(Trip, User, $state, $auth) {
   };
 
   function disabled(data) {
+    // in the dateOptions, it loops over the days that display in the popup to the user
+    // if the disabled function returns true, the day is disabled
+    // can use operators with date objects as you would numbers!
     if(vm.trip.start_date) {
       const date = data.date,
         mode = data.mode;
