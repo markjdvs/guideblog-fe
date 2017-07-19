@@ -9,6 +9,76 @@ $earthGreen: lighten(#98d04f, 20%);
 $blueGrey: #EDEFF2;
 $earth: #C6B38E;
 
+// posts & trips "card" class
+.card {
+  margin: 30px 10px;
+  background: lighten($earthGreen, 15%);
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 1px lighten(black, 80%);
+  .cardBody {
+    font-size: 80%;
+    max-width: 95%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0;
+  }
+  > h3 {
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 700;
+    span {
+      color: darken($earth, 40%) !important;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      margin-right: 1em;
+    }
+
+  }
+
+  .cardFooter {
+    font-size: 70%;
+    overflow: auto;
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    font-weight: 700;
+    button {
+      font-family: inherit;
+      text-transform: inherit;
+      border-radius: 10px;
+      border: 1px solid lighten(black, 80%);
+      height: 4em;
+      width: 10em;
+      color: darken($earth, 40%) !important;
+      &:nth-child(1) {
+        background: $earthBlue;
+      }
+      &:nth-child(2) {
+        background: lighten(red, 40%);
+      }
+    }
+    :nth-child(1) {
+      float: left;
+      line-height: 2em;
+      img {
+        height: 2em;
+        width: 2em;
+        border-radius: 100px;
+        margin-right: 10px;
+      }
+    }
+    :nth-child(2) {
+      float: right;
+      line-height: 2em;
+    }
+  }
+}
 
 body {
   letter-spacing: 1px;
@@ -34,7 +104,7 @@ img {
 
 form {
   background-color: $earthGreen;
-  color: $earthBlue;
+  color: darken($earthBlue, 50%);
   h3 {
     padding-bottom: 20px;
   }
@@ -44,11 +114,11 @@ form {
     border: solid 1px #fff;
     background: #fff;
     &:focus {
-      border: none;
+      outline: none !important;
     }
     &:hover {
-      border: solid 1px $earthBlue;
-      background-color: $earthBlue;
+      border: solid 1px darken($earthBlue, 50%);
+      background-color: darken($earthBlue, 50%);
       color: white;
     }
   }
@@ -213,12 +283,18 @@ main {
     .profileHeader {
       margin-bottom: 20px;
       h3 {
-        color: $earthGreen;
+        color: darken($earth, 40%);
         font-size: 25px;
         display: inline-block;
       }
       button {
         padding: 10px;
+        border: 1px solid darken($earth, 10%);
+        background: none;
+        border-radius: 10px;
+        &:first-of-type {
+          margin-left: 20px;
+        }
       }
     }
     .profileImage {
@@ -465,61 +541,61 @@ main {
   }
 }
 
-.tripsIndexPosts {
-  margin: 30px 10px;
-  background: lighten($earthGreen, 15%);
-  padding: 20px;
-  border-radius: 10px;
-  border: solid 1px lighten(black, 80%);
-  .postShowBody {
-    font-size: 80%;
-    max-width: 95%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 20px 0;
-  }
-  > h3 {
-    font-family: 'Quicksand';
-    text-transform: uppercase;
-    font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 18px;
-    font-weight: 700;
-    span {
-      color: darken($earth, 40%) !important;
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
-      margin-right: 1em;
-    }
-
-  }
-
-  .postShowFooter {
-    font-size: 70%;
-    overflow: auto;
-    font-family: 'Quicksand';
-    text-transform: uppercase;
-    // font-weight: 700;
-    :nth-child(1) {
-      float: left;
-      line-height: 2em;
-      img {
-        height: 2em;
-        width: 2em;
-        border-radius: 100px;
-        margin-right: 10px;
-      }
-    }
-    :nth-child(2) {
-      float: right;
-      line-height: 2em;
-    }
-  }
-
-}
+// .tripsIndexPosts {
+//   margin: 30px 10px;
+//   background: lighten($earthGreen, 15%);
+//   padding: 20px;
+//   border-radius: 10px;
+//   border: solid 1px lighten(black, 80%);
+//   .postShowBody {
+//     font-size: 80%;
+//     max-width: 95%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     margin: 20px 0;
+//   }
+//   > h3 {
+//     font-family: 'Quicksand';
+//     text-transform: uppercase;
+//     font-weight: 700;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     font-size: 18px;
+//     font-weight: 700;
+//     span {
+//       color: darken($earth, 40%) !important;
+//       border-top: 1px solid black;
+//       border-bottom: 1px solid black;
+//       margin-right: 1em;
+//     }
+//
+//   }
+//
+//   .postShowFooter {
+//     font-size: 70%;
+//     overflow: auto;
+//     font-family: 'Quicksand';
+//     text-transform: uppercase;
+//     // font-weight: 700;
+//     :nth-child(1) {
+//       float: left;
+//       line-height: 2em;
+//       img {
+//         height: 2em;
+//         width: 2em;
+//         border-radius: 100px;
+//         margin-right: 10px;
+//       }
+//     }
+//     :nth-child(2) {
+//       float: right;
+//       line-height: 2em;
+//     }
+//   }
+//
+// }
 
 
 @media only screen and (min-width:600px) {

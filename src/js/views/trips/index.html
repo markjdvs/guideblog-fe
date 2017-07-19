@@ -4,14 +4,14 @@
     </div>
   </div>
 
-  <div ng-repeat="post in tripsIndex.filteredStops | orderBy : '-get_balanced_votes'" class="tripsIndexPosts">
+  <div ng-repeat="post in tripsIndex.filteredStops | orderBy : '-get_balanced_votes'" class="card">
       <h3><span>{{post.get_balanced_votes}}</span>
         <a ui-sref="postsShow({ id: post.id })">
           {{ post.title }}
         </a>
       </h3>
-      <p class="postShowBody">{{ post.body }}</p>
-      <p class="postShowFooter">
+      <p class="cardBody">{{ post.body }}</p>
+      <p class="cardFooter">
         <a ui-sref="usersShow({ id: post.user.id })">
           <img ng-src="{{ post.user.image_src }}">
           <strong>{{ post.user.username }}</strong>
