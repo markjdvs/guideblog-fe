@@ -103,7 +103,8 @@ img {
 }
 
 form {
-  background-color: $earthGreen;
+  text-align: center;
+  background-color: lighten($earthGreen, 5%);
   color: darken($earthBlue, 50%);
   h3 {
     padding-bottom: 20px;
@@ -395,9 +396,18 @@ main {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   padding: 10px;
+  font-family: 'Quicksand';
 
-  label, input{
-    margin-top: 10px;
+  label {
+    font-weight: 700;
+    font-size: 90%;
+    padding: 30px 0 5px 0;
+
+  }
+  input {
+    text-align: center;
+    padding: 0 10px;
+    font-family: 'BioRhyme';
   }
 
   h3 {
@@ -408,6 +418,10 @@ main {
   .authButton {
     margin-top: 25px;
     text-align: center;
+    font-family: 'BioRhyme';
+  }
+  p {
+
   }
 }
 

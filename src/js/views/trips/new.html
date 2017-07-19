@@ -1,27 +1,35 @@
 <div class="container">
-  <!-- <h1>Create a new trip for your fine self.</h1> -->
   <form ng-submit="tripsNew.create()" name="tripsNew.newForm" class="form-group authForm" novalidate>
-    <h1>Create a new trip for your fine self.</h1>
     <div>
-      <label for="trip_name">Name of your Trip</label>
+      <label for="trip_name">What's the name of your trip?</label>
       <input type="text" name="trip_name" ng-model="tripsNew.trip.trip_name" required class="form-control">
     </div>
     <div class="ng-message-error" ng-messages="tripsNew.newForm.trip_name.$error" ng-show="(tripsNew.newForm.$submitted || tripsNew.newForm.trip_name.$touched)">
-      <p ng-message="required">Your Trip Name is required.</p>
+      <p ng-message="required">Ya gotta name it something!</p>
     </div>
     <div>
-      <label for="start_date">Start Date</label>
-      <input type="date" name="start_date" ng-model="tripsNew.trip.start_date" required class="form-control">
+      <label for="start_date">Leaving on</label>
+      <div class="input-group">
+        <input type="text" id="start_date" name="start_date" class="form-control" uib-datepicker-popup="{{ tripsNew.format }}" datepicker-options="tripsNew.dateOptions" ng-model="tripsNew.trip.start_date" is-open="tripsNew.startDate.opened">
+        <span class="input-group-btn">
+           <button type="button" class="btn btn-default" ng-click="tripsNew.openStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
     </div>
     <div class="ng-message-error" ng-messages="tripsNew.newForm.start_date.$error" ng-show="(tripsNew.newForm.$submitted || tripsNew.newForm.start_date.$touched)">
-      <p ng-message="required">Your Start Date is required.</p>
+      <p ng-message="required">Please provide a date when you're beginning your trip.</p>
     </div>
     <div>
-      <label for="leave_date">Leave Date</label>
-      <input type="date" name="leave_date" ng-model="tripsNew.trip.leave_date" required class="form-control">
+      <label for="leave_date">Returning on</label>
+      <div class="input-group">
+        <input type="text" id="leave_date" name="leave_date" class="form-control" uib-datepicker-popup="{{ tripsNew.format }}" datepicker-options="tripsNew.dateOptions" ng-model="tripsNew.trip.leave_date" is-open="tripsNew.leaveDate.opened">
+        <span class="input-group-btn">
+           <button type="button" class="btn btn-default" ng-click="tripsNew.openLeaveDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
     </div>
-    <div class="ng-message-error" ng-messages="tripsNew.newForm.leave_date.$error" ng-show="(tripsNew.newForm.$submitted || tripsNew.newForm.leave_date.$touched)">
-      <p ng-message="required">Your Leave Date is required.</p>
+    <div class="ng-message-error" ng-messages="tripsNew.newForm.leave_date.$error" ng-show="(tripsNew.newForm.$submitted || tripsNew.newFormleave_date.$touched)">
+      <p ng-message="required">Please provide a date of return.</p>
     </div>
     <div class="authButton">
       <button class="button">Create</button>

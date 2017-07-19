@@ -133,8 +133,43 @@ function TripsNewCtrl(Trip, User, $state, $auth) {
   const vm = this;
   vm.trip = {};
   vm.allUsers = User.query();
+  vm.startDate = {};
+  vm.leaveDate = {};
 
+  function openStartDate() {
+    vm.startDate.opened = true;
+  }
+  vm.openStartDate = openStartDate;
 
+  function openLeaveDate() {
+    vm.leaveDate.opened = true;
+  }
+  vm.openLeaveDate = openLeaveDate;
+
+  vm.dateOptions = {
+    dateDisabled: disabled,
+    formatYear: 'yy',
+    maxDate: new Date(2020, 5, 22),
+    minDate: new Date(),
+    startingDay: 1,
+    showWeeks: true
+  };
+
+  function disabled(data) {
+    if(vm.trip.start_date) {
+      const date = data.date,
+        mode = data.mode;
+      return mode === 'day' && (date < vm.trip.start_date);
+    }
+  }
+  vm.disabled = disabled;
+
+  vm.startDatePopup = {
+    opened: false
+  };
+
+  vm.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'fullDate'];
+  vm.format = vm.formats[4];
 
   function tripsCreate() {
     vm.trip.start_date = new Date(vm.trip.start_date.getTime() + (2*1000*60*60));
