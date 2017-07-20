@@ -9,6 +9,10 @@ $earthGreen: lighten(#98d04f, 20%);
 $blueGrey: #EDEFF2;
 $earth: #C6B38E;
 
+button, button:hover, button:focus {
+  outline: none;
+}
+
 // posts & trips "card" class
 .card {
   margin: 30px 10px;
@@ -107,13 +111,25 @@ form {
   background-color: lighten($earthGreen, 5%);
   color: darken($earthBlue, 50%);
   h3 {
-    padding-bottom: 20px;
+    color: darken($earth, 40%) !important;
+    font-weight: 700;
   }
   button {
     border-radius: 10px;
     padding: 10px;
     border: solid 1px #fff;
     background: #fff;
+    &[type="button"] {
+      i {
+        color: $earth;
+      }
+      &:hover {
+        background: $earth;
+        i {
+          color: $ivory;
+        }
+      }
+    }
     &:focus {
       outline: none !important;
     }
@@ -136,7 +152,7 @@ nav {
       height: 25px;
       width: 25px;
       &.spin {
-        animation: spin 2s infinite;
+        animation: spin 0.5s;
       }
     }
   }
@@ -230,10 +246,7 @@ h1 {
       }
     }
   }
-
 }
-
-
 
 li {
   list-style: none;
@@ -391,13 +404,13 @@ main {
 }
 
 .authForm {
-  width: 80%;
+  width: 90%;
   margin: 30px auto;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border: 2px solid $earth;
+  border-radius: 10px;
   padding: 10px;
   font-family: 'Quicksand';
-
+  padding-bottom: 20px;
   label {
     font-weight: 700;
     font-size: 90%;
@@ -435,41 +448,61 @@ main {
 .tripDetails {
   margin-top: 10px;
   margin-left: 20px;
-  h3 {
-    color: $earthGreen;
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold;
+  text-align: center;
+  > * {
+    display: inline-block;
+    margin-right: 10px;
   }
-}
-
-.addStopForm {
-  min-height: 100%;
-  h3 {
-    color: $earthGreen;
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-align: center;
+  > h3 {
+    font-size: 22px;
+    font-weight: 700;
   }
-
+  > button {
+    background: none;
+    border-radius: 10px;
+    padding: 5px;
+    border: solid 1px darken($earth, 40%);
+    &:hover {
+      background: darken($earth, 40%);
+      color: $ivory;
+    }
+  }
 }
 
 .stopsList {
-  max-width: 80%;
+  max-width: 90%;
   min-height: 100%;
   text-align: center;
-  border-top: 2px solid black;
-  margin: 30px auto;
+  border-top: 2px dashed black;
+  margin: 20px auto;
   padding: 10px;
   h3 {
-    color: $earthGreen;
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold;
+    color: darken($earth, 40%);
+    font-family: 'Quicksand';
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+  a {
+    color: darken($earth, 40%);
+    span {
+      font-weight: 700;
+    }
+  }
+  button {
+    background: none;
+    border: 1px solid $earth;
+    &:hover {
+      background: lighten(red, 40%);
+    }
   }
   .stops {
     margin-bottom: 10px;
+    margin: 30px 10px;
+    background: lighten($earthBlue, 10%);
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px lighten(black, 80%);
   }
 }
 
@@ -554,63 +587,6 @@ main {
     }
   }
 }
-
-// .tripsIndexPosts {
-//   margin: 30px 10px;
-//   background: lighten($earthGreen, 15%);
-//   padding: 20px;
-//   border-radius: 10px;
-//   border: solid 1px lighten(black, 80%);
-//   .postShowBody {
-//     font-size: 80%;
-//     max-width: 95%;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     margin: 20px 0;
-//   }
-//   > h3 {
-//     font-family: 'Quicksand';
-//     text-transform: uppercase;
-//     font-weight: 700;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     font-size: 18px;
-//     font-weight: 700;
-//     span {
-//       color: darken($earth, 40%) !important;
-//       border-top: 1px solid black;
-//       border-bottom: 1px solid black;
-//       margin-right: 1em;
-//     }
-//
-//   }
-//
-//   .postShowFooter {
-//     font-size: 70%;
-//     overflow: auto;
-//     font-family: 'Quicksand';
-//     text-transform: uppercase;
-//     // font-weight: 700;
-//     :nth-child(1) {
-//       float: left;
-//       line-height: 2em;
-//       img {
-//         height: 2em;
-//         width: 2em;
-//         border-radius: 100px;
-//         margin-right: 10px;
-//       }
-//     }
-//     :nth-child(2) {
-//       float: right;
-//       line-height: 2em;
-//     }
-//   }
-//
-// }
-
 
 @media only screen and (min-width:600px) {
   .mapWrapper {

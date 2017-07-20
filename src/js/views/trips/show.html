@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row tripDetails">
     <h3>{{ tripsShow.trip.trip_name }}</h3>
-    <p>From {{ tripsShow.trip.start_date | date }} until {{ tripsShow.trip.leave_date | date }}</p>
-    <br>
-    <button ng-if="main.isAuthenticated() && main.currentUser.id === tripsShow.trip.user.id" ui-sref="tripsEdit({ id: tripsShow.trip.id })">Edit</button>
+    <p>{{ tripsShow.trip.start_date | date:'shortDate' }} - {{ tripsShow.trip.leave_date | date:'shortDate' }}</p>
+    <button ng-if="main.isAuthenticated() && main.currentUser.id === tripsShow.trip.user.id" ui-sref="tripsEdit({ id: tripsShow.trip.id })"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>
 
   </div>
   <div class="row">
@@ -11,8 +10,8 @@
       <h3>Current Stops</h3>
       <ul>
         <li ng-repeat="stop in tripsShow.trip.stops" class="stops">
-          <button ng-if="main.isAuthenticated() && main.currentUser.id === tripsShow.trip.user.id" ng-click="tripsShow.deleteStop(stop)" class="deleteButton">X</button>
-          <a ui-sref="stopsShow({ id: stop.id })">{{ stop.place }}, {{ stop.country }} - {{ stop.start_date | date }} to {{ stop.leave_date | date }}</a>
+          <button ng-if="main.isAuthenticated() && main.currentUser.id === tripsShow.trip.user.id" ng-click="tripsShow.deleteStop(stop)" class="deleteButton"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+          <a ui-sref="stopsShow({ id: stop.id })"><span>{{ stop.place }}, {{ stop.country }}</span> {{ stop.start_date | date:"shortDate" }} - {{ stop.leave_date | date:"shortDate" }}</a>
         </li>
       </ul>
     </div>

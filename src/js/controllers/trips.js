@@ -206,7 +206,7 @@ function TripsShowCtrl(Trip, Stop, $stateParams, filterFilter, $scope, skyscanne
   vm.openStopLeaveDate = openStopLeaveDate;
 
   vm.dateOptions = {
-    // dateDisabled: disabled,
+    dateDisabled: disabled,
     formatYear: 'yy',
     maxDate: new Date(2020, 5, 22),
     minDate: new Date(),
@@ -214,17 +214,12 @@ function TripsShowCtrl(Trip, Stop, $stateParams, filterFilter, $scope, skyscanne
     showWeeks: true
   };
 
-  // function disabled(data) {
-  //   // in the dateOptions, it loops over the days that display in the popup to the user
-  //   // if the disabled function returns true, the day is disabled
-  //   // can use operators with date objects as you would numbers!
-  //   if(vm.trip.start_date) {
-  //     const date = data.date,
-  //       mode = data.mode;
-  //     return mode === 'day' && (date < vm.trip.start_date);
-  //   }
-  // }
-  // vm.disabled = disabled;
+  function disabled(data) {
+    const date = data.date,
+      mode = data.mode;
+    return mode === 'day' && (date < vm.trip.start_date) && (date > vm.trip.leave_date);
+  }
+  vm.disabled = disabled;
 
   vm.stopStartDatePopup = {
     opened: false
@@ -238,8 +233,8 @@ function TripsShowCtrl(Trip, Stop, $stateParams, filterFilter, $scope, skyscanne
     .get($stateParams)
     .$promise
     .then(() => {
-      vm.startDate = moment(vm.trip.start_date).format('YYYY-MM-DD').toString();
-      vm.leaveDate = moment(vm.trip.leave_date).format('YYYY-MM-DD').toString();
+      vm.trip.start_date = moment(vm.trip.start_date).format('YYYY-MM-DD').toString();
+      vm.trip.leave_date = moment(vm.trip.leave_date).format('YYYY-MM-DD').toString();
     });
 
   function addStop() {
