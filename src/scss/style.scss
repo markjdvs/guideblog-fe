@@ -221,23 +221,61 @@ h1 {
   text-align: center;
 }
 
+.postContent {
+  padding: 0 20px 10px 20px;
+  text-align: center;
+  > * {
+    margin-bottom: 30px;
+  }
+  > h3 {
+    font-weight: 700;
+    font-size: 20px;
+    span.votingPanel {
+      color: $earth;
+    }
+  }
+  > p {
+    font-size: 13px;
+  }
+}
+
 .carousel {
   height: 300px;
   text-align: center;
+  margin-bottom: 30px;
+  a.right.carousel-control, a.left.carousel-control {
+    background-image: none;
+  }
+  button {
+    background: none;
+    border: 1px solid $earth;
+    i {
+      color: $earth;
+    }
+    &:hover {
+      background: lighten(red, 40%);
+      border: 1px solid lighten(red, 40%);
+      i {
+        color: $ivory;
+      }
+    }
+  }
   div {
-    div{
+    div {
       display: inline-block;
       position: relative;
+      background: inherit;
       button {
         position: absolute;
         top: 10%;
-        color: white;
+        color: $ivory;
         left: 50%;
         transform: translate(-50%, -50%);
       }
       .carouselImage {
         height: 300px;
         width: 100%;
+        border-radius: 10px;
         &:after {
           content: "";
           display: block;
@@ -608,14 +646,45 @@ main {
   min-height: 200px;
   h2 {
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
     font-weight: bold;
   }
-  div {
-    p {
-      margin-bottom:10px;
-      text-align: center;
+  > div {
+    text-align: center;
+    padding: 0 10px;
+    margin: 10px;
+    div {
+      margin: 5px;
+    }
+    a {
+      font-family: 'Quicksand';
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 14px;
+      color: darken($earthBlue, 50%);
+      margin-right: 10px;
+    }
+    > span {
+      color: $earthGreen;
+    }
+    button {
+      height: 2em;
+      width: 2em;
+      border-radius: 10px;
+      border: 1px solid $earth;
+      background: none;
+      margin-right: 10px;
+      i {
+        color: $earth;
+      }
+      &:hover {
+        background: lighten(red, 40%);
+        border: 1px solid lighten(red, 40%);
+        i {
+          color: $ivory;
+        }
+      }
     }
   }
 }

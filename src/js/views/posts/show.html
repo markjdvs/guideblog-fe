@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="postContent">
-      <h3>{{ postsShow.post.title }}</h3>
+      <h3><span class="votingPanel"><span ng-if="postsShow.post.get_balanced_votes > 0">+</span><span ng-if="postsShow.post.get_balanced_votes < 0">-</span>{{ postsShow.post.get_balanced_votes }}</span> {{ postsShow.post.title }}</h3>
       <p>{{ postsShow.post.body }}</p>
     </div>
   </div>
@@ -10,7 +10,7 @@
   <div class="carousel" ng-if="postsShow.post.images.length > 0">
     <div uib-carousel active="postsShow.active" interval="postsShow.interval" no-wrap="postsShow.noWrap">
       <div uib-slide ng-repeat="image in postsShow.post.images" index="$index">
-        <button ng-if="main.isAuthenticated() && main.currentUser.id === image.user.id" ng-click="postsShow.deleteImage(image)" class="deleteButton">x</button>
+        <button ng-if="main.isAuthenticated() && main.currentUser.id === image.user.id" ng-click="postsShow.deleteImage(image)" class="deleteButton"><i class="fa fa-trash fa-lg"></i></button>
         <img class="carouselImage" ng-src="{{ image.image_src }}">
       </div>
     </div>
@@ -27,10 +27,15 @@
     </div>
   </form>
 
-  <div class="comments">
+  <div ng-show="postsShow.post.comments.length > 0" class="comments">
     <h2>Comments</h2>
     <div ng-repeat="comment in postsShow.post.comments">
-      <p>{{ comment.body }} <br>- <strong>{{ comment.user.username }}</strong> <button ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">x</button></p>
+      <div>{{ comment.body }}</div>
+      <a ui-sref="usersShow({ id: postsShow.post.user.id })"><strong>{{ comment.user.username }}</strong></a>
+      <button ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id"><i class="fa fa-trash fa-lg"></i></button>
+      <span>
+        {{ comment.created_at | date:'shortDate' }}
+      </span>
     </div>
   </div>
 
