@@ -192,6 +192,47 @@ TripsShowCtrl.$inject = ['Trip', 'Stop', '$stateParams', 'filterFilter', '$scope
 function TripsShowCtrl(Trip, Stop, $stateParams, filterFilter, $scope, skyscanner) {
   const vm = this;
   vm.trip = Trip.get($stateParams);
+  vm.stopStartDate = {};
+  vm.stopLeaveDate = {};
+
+  function openStopStartDate() {
+    vm.stopStartDate.opened = true;
+  }
+  vm.openStopStartDate = openStopStartDate;
+
+  function openStopLeaveDate() {
+    vm.stopLeaveDate.opened = true;
+  }
+  vm.openStopLeaveDate = openStopLeaveDate;
+
+  vm.dateOptions = {
+    // dateDisabled: disabled,
+    formatYear: 'yy',
+    maxDate: new Date(2020, 5, 22),
+    minDate: new Date(),
+    startingDay: 1,
+    showWeeks: true
+  };
+
+  // function disabled(data) {
+  //   // in the dateOptions, it loops over the days that display in the popup to the user
+  //   // if the disabled function returns true, the day is disabled
+  //   // can use operators with date objects as you would numbers!
+  //   if(vm.trip.start_date) {
+  //     const date = data.date,
+  //       mode = data.mode;
+  //     return mode === 'day' && (date < vm.trip.start_date);
+  //   }
+  // }
+  // vm.disabled = disabled;
+
+  vm.stopStartDatePopup = {
+    opened: false
+  };
+
+  vm.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'fullDate'];
+  vm.format = vm.formats[4];
+
 
   Trip
     .get($stateParams)
