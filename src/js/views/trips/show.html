@@ -35,7 +35,7 @@
           <div class="input-group">
             <input type="text" id="start_date" name="start_date" class="form-control" uib-datepicker-popup="{{ tripsShow.format }}" datepicker-options="tripsShow.dateOptions" ng-model="tripsShow.stop.start_date" is-open="tripsShow.stopStartDate.opened" required>
             <span class="input-group-btn">
-               <button type="button" class="btn btn-default" ng-click="tripsShow.openStopStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+               <button type="button" class="btn btn-default" ng-click="tripsShow.openStopStartDate()"><i class="fa fa-calendar-plus-o fa-lg" aria-hidden="true"></i></button>
             </span>
           </div>
         </div>
@@ -44,17 +44,12 @@
           <p ng-message="required">Please provide the <span ng-show="tripsShow.info.place">date of</span> arrival <span ng-hide="tripsShow.info.place">date</span><span ng-show="tripsShow.info.place">at {{ tripsShow.info.place }}</span></p>
         </div>
 
-        <!-- <div>
-          <label for="leave_date">Leave Date</label>
-          <input type="date" id="leave_date" name="leave_date" min="{{ tripsShow.startDate }}" max="{{ tripsShow.leaveDate }}" ng-model="tripsShow.stop.leave_date" class="form-control" required>
-        </div> -->
-
         <div>
           <label for="leave_date">Leaving on</label>
           <div class="input-group">
             <input type="text" id="leave_date" name="leave_date" class="form-control" uib-datepicker-popup="{{ tripsShow.format }}" datepicker-options="tripsShow.dateOptions" ng-model="tripsShow.stop.leave_date" is-open="tripsShow.stopLeaveDate.opened" required>
             <span class="input-group-btn">
-               <button type="button" class="btn btn-default" ng-click="tripsShow.openStopLeaveDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+               <button type="button" class="btn btn-default" ng-click="tripsShow.openStopLeaveDate()"><i class="fa fa-calendar-plus-o fa-lg" aria-hidden="true"></i></button>
             </span>
           </div>
         </div>

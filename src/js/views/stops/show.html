@@ -14,29 +14,31 @@
 
       <div class="form-group">
         <label for="postBody">Your Post</label>
-        <textarea class="form-control" name="postBody" ng-model="stopsShow.post.body" required></textarea>
+        <div class="textarea">
+          <textarea class="form-control" name="postBody" ng-model="stopsShow.post.body" rows="7" required></textarea>
+        </div>
       </div>
       <div class="ng-message-error" ng-messages="stopsShow.stopForm.postBody.$error" ng-show="(stopsShow.stopForm.$submitted || stopsShow.stopForm.postBody.$touched)">
         <p ng-message="required">A Post is Required.</p>
       </div>
 
       <div class="form-group">
-        <label for="valueForMoney">Value For Money</label>
+        <label for="valueForMoney">Value For Money <i class="fa fa-money fa-lg" aria-hidden="true"></i></label>
         <p class="rating"><span uib-rating name="valueForMoney" ng-model="stopsShow.post.value_for_money" max="5" read-only="isReadOnly"></span></p>
       </div>
 
       <div class="form-group">
-        <label for="nightLife">Night Life</label>
+        <label for="nightLife">Night Life <i class="fa fa-glass fa-lg" aria-hidden="true"></i></label>
         <p class="rating"><span uib-rating name="nightLife" ng-model="stopsShow.post.night_life" max="5" read-only="isReadOnly"></span></p>
       </div>
 
       <div class="form-group">
-        <label for="culture">Culture</label>
+        <label for="culture">Culture <i class="fa fa-university fa-lg" aria-hidden="true"></i></label>
         <p class="rating"><span uib-rating ng-model="stopsShow.post.culture" max="5" read-only="isReadOnly"></span></p>
       </div>
 
       <div class="form-group">
-        <label for="hospitality">Hospitality</label>
+        <label for="hospitality">Hospitality <i class="fa fa-h-square fa-lg" aria-hidden="true"></i></label>
         <p class="rating"><span uib-rating name="hospitality" ng-model="stopsShow.post.hospitality" max="5" read-only="isReadonly"></span></p>
       </div>
       <div class="authButton">
@@ -48,12 +50,15 @@
   <div>
     <div ng-repeat="post in stopsShow.stop.posts" class="col-sm-6 postDiv">
       <h2><a ui-sref="postsShow({ id: post.id })"><strong>{{ post.title }}</strong></a></h2>
-      <br>
-      <p class="postShowBody"><button ng-if="main.isAuthenticated() && main.currentUser.id === post.user.id" ng-click="stopsShow.deletePost(post)" class="deleteButton" >X</button>  {{ post.body }}</p>
-      <button ng-if="main.isAuthenticated()" ng-click="stopsShow.upVote(post)">&#128077;</button>
-      {{post.get_balanced_votes}} <span ng-if="!main.isAuthenticated()">Votes</span>
-      <button ng-if="main.isAuthenticated()" ng-click="stopsShow.downVote(post)">&#128078;</button>
-
+      <p>{{ post.body }}</p>
+      <div class="votingPanel">
+        <button ng-if="main.isAuthenticated()" ng-click="stopsShow.upVote(post)"><i class="fa fa-angle-up fa-lg" aria-hidden="true"></i></button>
+        {{post.get_balanced_votes}} <span ng-if="!main.isAuthenticated()">Votes</span>
+        <button ng-if="main.isAuthenticated()" ng-click="stopsShow.downVote(post)"><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></button>
+      </div>
+      <div class="deletePanel">
+        <button ng-if="main.isAuthenticated() && main.currentUser.id === post.user.id" ng-click="stopsShow.deletePost(post)" class="deleteButton"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+      </div>
     </div>
   </div>
 </div>

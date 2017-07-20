@@ -306,6 +306,11 @@ main {
         border: 1px solid darken($earth, 10%);
         background: none;
         border-radius: 10px;
+        &:hover {
+          i {
+            opacity: 0.5;
+          }
+        }
         &:first-of-type {
           margin-left: 20px;
         }
@@ -422,9 +427,14 @@ main {
     padding: 0 10px;
     font-family: 'BioRhyme';
   }
+  textarea {
+    font-family: 'BioRhyme';
+    font-size: 14px;
+    resize: none;
+  }
 
   h3 {
-    color: $earthGreen;
+    color: $earthBlue;
     font-size: 24px;
     margin-bottom: 10px;
   }
@@ -549,6 +559,7 @@ main {
 .stopHeader {
   margin: 10px 0;
   padding-bottom: 10px;
+  text-align: center;
   h1 {
     span {
       font-size: 24px;
@@ -558,17 +569,38 @@ main {
 }
 
 .rating{
-  padding: 10px 0;
+  padding: 10px;
+  display: inline-block;
 }
 
 .postDiv {
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  text-align: center;
   h2 {
-    font-size: 24px;
+    font-size: 22px;
     padding-bottom: 5px;
   }
-  p{
+  p {
     margin-bottom: 10px;
+  }
+  .votingPanel, .deletePanel {
+    display: inline-block;
+    margin-right: 40px;
+  }
+  button {
+    border-radius: 10px;
+    background: none;
+    border: 1px solid darken($earth, 30%);
+    i {
+      color: darken($earth, 30%);
+    }
+
+    &:hover {
+      background: darken($earth, 30%);
+      i {
+        color: $ivory;
+      }
+    }
   }
 }
 
