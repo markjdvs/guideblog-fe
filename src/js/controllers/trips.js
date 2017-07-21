@@ -25,6 +25,8 @@ function TripsIndexCtrl(Trip, Post, Stop) {
     });
 
   function initMap() {
+    let infoWindow = null;
+
     vm.map = new google.maps.Map(document.getElementById('map'), {
       zoom: 2,
       center: { lat: 10.755018, lng: 5.344179 },
@@ -41,7 +43,8 @@ function TripsIndexCtrl(Trip, Post, Stop) {
 
     vm.marker = vm.allPosts.map(function(location) {
       return new google.maps.Marker({
-        position: location
+        position: location,
+        icon: '/images/marker.png'
       });
     });
 
@@ -57,15 +60,21 @@ function TripsIndexCtrl(Trip, Post, Stop) {
           .$promise
           .then((stop) => {
             vm.stop = stop;
-            contentString = `
-                            <h3>${vm.stop[0].place}</h3>
-                            <ul>
-                              <li>Value For Money: <br>${vm.stop[0].average_value_for_money}</li>
-                              <li>Night Life: <br>${vm.stop[0].average_night_life}</li>
-                              <li>Culture: <br>${vm.stop[0].average_culture}</li>
-                              <li>Hospitality: <br>${vm.stop[0].average_hospitality}</li>
-                            </ul>`;
-            const infoWindow = new google.maps.InfoWindow({ content: contentString });
+            const contentString = `
+                            <div class="popupWindow">
+                              <br>
+                              <h3>${vm.stop[0].place}</h3>
+                              <ul>
+                                <li><i class="fa fa-money fa-lg" aria-hidden="true"></i> ${vm.stop[0].average_value_for_money}</li>
+                                <li><i class="fa fa-glass fa-lg" aria-hidden="true"></i> ${vm.stop[0].average_night_life}</li>
+                                <li><i class="fa fa-university fa-lg" aria-hidden="true"></i> ${vm.stop[0].average_culture}</li>
+                                <li><i class="fa fa-h-square fa-lg" aria-hidden="true"></i> ${vm.stop[0].average_hospitality}</li>
+                              </ul>
+                            </div>
+                            `;
+            console.log(infoWindow);
+            if (infoWindow) infoWindow.close();
+            infoWindow = new google.maps.InfoWindow({ content: contentString });
             infoWindow.open(vm.map, marker);
           });
 
