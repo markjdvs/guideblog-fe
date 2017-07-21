@@ -6,7 +6,37 @@ Guideblog is a mobile-first app with a Ruby on Rails API Back End and an Angular
 
 ### User Journey
 
+This app provides a platform for users to plan trips based on interesting and popular blog posts from various areas of the world. Clusters of blog posts on different 'stops' (locations) provide a detailed and real impression of the local areas mentioned in these posts. Posts can be up or down-voted if they are deemed use(ful/less) by other users with popular posts being pushed up the 'worldblog' post feed. Various factors are provided by the blogger such as value for money, nightlife, culture and hospitality, allowing different users to find places that meet their preferences for a trip.
 
+The worldblog page is available to any user, even unregistered ones, and displays all blog posts from all over the world. By clicking on specific areas, the specific posts associated with that cluster are displayed beneath. These are also sorted by popularity, voted for by other users who found them useful or a better reflection of the location.
+
+![worldblog](./src/images/worldblog.png "Worldblog Page")
+![worldblog](./src/images/worldblogwithposts.png "Worldblog Page with Posts")
+
+A user needs to login in order create a trip and contribute to the app.
+
+![Profile](./src/images/profile.png "Profile Page")
+![New Trip](./src/images/newtrip.png "New Trip Page")
+![Profile with New Trip](./src/images/newtripwithtrip.png "Profile with New Trip")
+
+Going to a particular trip's page allows the user to begin adding stops to their journey. Previously, this is where the user could search for flights between different stops, providing further information and a more in-depth planning of their trip. However, due to the deprecation of the Skyscanner API, I have had to remove this. In the future, I will try to implement the [Rome2Rio API](https://www.rome2rio.com/documentation/).
+
+![Trip Show with Stops (1)](./src/images/tripshowwithstops.png "Trip Show Page with Stops")
+![Trip Show with Stops (2)](./src/images/tripshowwithstops2.png "Trip Show Page with Stops")
+
+We can then add our own posts to any city or other location along our trip and provide local information on it.
+
+![New Post](./src/images/postnew.png "New Post Page")
+![New Post](./src/images/postnew2.png "New Post Page")
+![New Post](./src/images/postnew3.png "New Post Page")
+
+This is also where posts can be voted for depending on their popularity to highlight the posts that *truly* paint a more real picture of the location.
+
+![Show Post](./src/images/postshow.png "Show Post Page")
+![Show Post](./src/images/postshow2.png "Show Post Page")
+![Show Post](./src/images/postshow3.png "Show Post Page")
+
+The post creator can upload personal images from during their time there and other users can comment on the post, connecting users of similar preferences with posts that meet those.
 
 ### Build & Technologies Used
 
